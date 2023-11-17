@@ -1,5 +1,6 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -7,9 +8,13 @@ public class Dog {
 
     private String name;
 
-    public Dog() {
+    //private final Person person;
+
+   // @Autowired
+    public Dog(/*Person person*/) {
         System.out.println("Dog created");
         name = "Tuzik";
+        //this.person = person;
     }
 
     public String getName() {
@@ -20,5 +25,10 @@ public class Dog {
         this.name = name;
     }
 
-
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
